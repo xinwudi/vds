@@ -1,3 +1,3 @@
 # index
 
-[快速入门](quick_start.html)
+## [快速入门](quick_start.html)
