@@ -3,6 +3,6 @@
 
 ### [安装说明](setup.html)
 ### [快速入门](quick_start.html)
-### [SQL 语法](sql.html)
+### [SQL语法](sql.html)
 ### [常见问题](faq.html)
 ### [联系我们](contact.html)
