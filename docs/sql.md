@@ -588,7 +588,7 @@
          TO MAPPING_INDEX_TABLE(B) 
          WITH(B);
 	 
-	 ```		
+```		
 
 ### Drop Table 
 * 语法描述
