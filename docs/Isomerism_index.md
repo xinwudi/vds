@@ -5,7 +5,7 @@
 
 * 配置语法
        
-	```
+	```sql
         CREATE ISOMERISM INDEX [IF NOT EXISTS] index_name ON  
         table_name(column_define ...) [USING table_name]
            {
@@ -19,7 +19,7 @@
 		 		
 * 配置实例
 
-    ```
+    ```sql
      CREATE ISOMERISM INDEX IF NOT EXISTS emp_job_index ON
 	 EMP(JOB) USING EMP_JOB_INDEX_TABLE
      SHARDING BY  HASH(JOB) SEGMENTS 100(
