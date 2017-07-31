@@ -533,7 +533,7 @@
 * 语法描述
 	
 	```sql
-	CREATE MAPPING SEQUENCE [ IF NOT EXISTS ] ON  PHYSICAL_DATABASE_NAME
+	CREATE MAPPING SEQUENCE [ IF NOT EXISTS ] [ON  PHYSICAL_DATABASE_NAME]
 		[ START WITH long ]
 		[ INCREMENT BY long ]
 	        [ MINVALUE long | NOMINVALUE | NO MINVALUE ] 
@@ -546,12 +546,12 @@
 	```
 * 语法说明
    
-   `PHYSICAL_DATABASE_NAME`是物理数据库名。
-   
+   `PHYSICAL_DATABASE_NAME`是物理数据库名。如果使用`[ON]`，物理数据库名必须加单引号，例如`on 'vds'`。不使用`[ON]`，序列将会创建到默认的物理库。
+   
 * 应用实例
 
 	```sql
-	CREATE MAPPING  SEQUENCE  IF NOT EXISTS seq1 ON vds
+	CREATE MAPPING  SEQUENCE  IF NOT EXISTS seq1 ON 'vds'
      START WITH 5
      INCREMENT BY 10
      MINVALUE 2
