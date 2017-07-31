@@ -2,6 +2,7 @@
 
 
 ### [安装说明](setup.html)
+### [配置说明](config.html)
 ### [快速入门](quick_start.html)
 ### [SQL语法](sql.html)
 ### [常见问题](faq.html)
