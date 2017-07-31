@@ -559,7 +559,32 @@
      CYCLE
      CACHE  10;
 	```
-		
+### Create Mapping index
+    
+ * 语法描述
+    	
+    	```sql
+    	CREATE MAPPING INDEX [IF NOT EXISTS] INDEX_NAME 
+        ON TABLE_NAME( INDEXCOLUMN_1[,...]) 
+        {[USING sql]
+        |[TO TABLE_NAME_INDEX(INDEXCOLUMN_2[,...])[WITH (expression[,...])]}
+    	
+    	```
+ * 语法说明
+       
+       `TABLE_NAME`是建立映射索引的分库表。
+       `TABLE_NAME_INDEX`是存储映射索引的分库表。
+       `INDEXCOLUMN_1`是建立映射索引的分库表的列名。
+       `INDEXCOLUMN_2`是存储映射索引的分库表的列名（分库条件列）。
+       
+  * 应用实例
+    
+    	```sql
+    	CREATE MAPPING  INDEX  IF NOT EXISTS MAPPING_INDEX 
+         ON TABLEA(B)
+         TO MAPPING_INDEX_TABLE(B) 
+         WITH(B);
+    	```		
 
 ### Drop Table 
 * 语法描述
