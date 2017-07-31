@@ -568,7 +568,9 @@
         ON TABLE_NAME( INDEXCOLUMN_1[,...]) 
         {[USING sql]
         |[TO TABLE_NAME_INDEX(INDEXCOLUMN_2[,...])[WITH (expression[,...])]}
-	```
+	
+	
+```
     
  * 语法说明
  
@@ -586,7 +588,7 @@
          TO MAPPING_INDEX_TABLE(B) 
          WITH(B);
 	 
-    ```		
+	 ```		
 
 ### Drop Table 
 * 语法描述
