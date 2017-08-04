@@ -5,35 +5,30 @@
 VDS(Virtual DataSource) - 虚拟数据源，是一款面向关系型数据库的***分库分表***中间件。 兼容Mysql通信协议，支持`Mysql官方驱动`、`Mysql命令行`、`DbVisualizer`、`Navicat`等工具。采用JDBC驱动连接物理数据源，支持`Oracle`、`Mysql`、`DB2`等作为后端物理数据源接入。
 
 ### 文档索引
-#### [安装说明](setup.html)
-#### [配置说明](config.html)
-#### [快速入门](quick_start.html)
-#### [SQL语法](sql.html)
-#### [异构索引](Isomerism_index.html)
-#### [常见问题](faq.html)
-#### [联系我们](contact.html)
+* [安装说明](setup.html)
+* [配置说明](config.html)
+* [快速入门](quick_start.html)
+* [SQL语法](sql.html)
+* [异构索引](Isomerism_index.html)
+* [常见问题](faq.html)
+* [联系我们](contact.html)
 
 ### 关键特性
 
 * 支持Mysql协议
 
-	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	目前，支持Mysql协议基本上是数据库中间件产品的标配；绝大部分开源软件都是引入了`Cobar`的实现，在VDS 3中，我们参考Mysql官方驱动，结合`Netty4` 重新实现了Mysql协议部分。同时支持文本协议与二进制协议。
 * 支持逻辑索引
 	
-	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	`逻辑索引`是VDS特有的索引类型，它不存在于任何一个物理数据库中。作为逻辑存在，它只有逻辑，没有任何的物理存储。***分库分表***的功能就是通过逻辑索引实现的， 同时我们也支持`映射索引`和`异构索引`。 其中`映射索引`通过客观存在的**关系表**进行查询加速， 而`异构索引`通过以不同的维度冗余数据，进行查询加速。
 * 支持DDL语句
 	
-	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	支持标准的DDL语句，支持在线对表、序列、索引、用户、数据源等进行管理。
 * 支持嵌套查询
 	
-	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	不限制SQL的复杂程度，SQL是否可用完全取决于执行计划。只要执行计划是合理的，就可以在线上使用。
 * 支持跨库关联
 
-   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
    对于关联查询，VDS会尽可能地对它进行优化，让它落到一点去执行。即便是未经优化，默认情况下，也会根据动态的数据开销，生成最优的执行计划。 保障SQL语议。
 * 支持聚合函数
 	
@@ -41,24 +36,19 @@ VDS(Virtual DataSource) - 虚拟数据源，是一款面向关系型数据库的
 	支持Count、Sum、Avg、Max、Min等常用聚合函数。
 * 支持分布式事务
 
-	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	在涉及到多个数据库的事务时，VDS会根据读写情况，智能选择XA连接和普通连接。在`Commit`的过程中采用`首个参与者优化`策略。
 * 支持自增主键
 
-	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	VDS采用Twitter的`雪花算法`实现自增ID。即非连续性单调递增。
 * 支持分布式序列
 
-	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	支持`雪花序列`与`映射序列`，其中`雪花序列`采用`雪花算法`，而`映射序列`通过调整初始值与步长，采用多个物理序列实现。
 * 支持预编译
 
-	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	支持Server-Side Prepared. VDS绝大部分处理逻辑都是在Prepared阶段完成。采用`PreparedStatement`可有效提升性能。
-	<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ps: Mysql驱动默认是关闭预编译功能的，需要设置客户端参数或URL指定启动预编译。
+	<br/>ps: Mysql驱动默认是关闭预编译功能的，需要设置客户端参数或URL指定启动预编译。
 * 支持用户、权限管理
 	
-	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	支持`Create|Alter User`, 支持`Grant` 赋权操作。
 	
 
