@@ -18,7 +18,7 @@
 * 初始化配置
 
 	`vds.server.init.sql = {*.sql}`
-	默认值为`classpath:/system_init.sql`, 多个脚本文件以`;`分隔。
+	默认值为`classpath:/system_init.sql`, 多个脚本文件以`,`分隔。
 * 运行模式配置
 	
 	`vds.server.meta.args = {option}`
