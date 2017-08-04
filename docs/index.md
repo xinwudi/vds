@@ -32,7 +32,6 @@ VDS(Virtual DataSource) - 虚拟数据源，是一款面向关系型数据库的
    对于关联查询，VDS会尽可能地对它进行优化，让它落到一点去执行。即便是未经优化，默认情况下，也会根据动态的数据开销，生成最优的执行计划。 保障SQL语议。
 * 支持聚合函数
 	
-	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	支持Count、Sum、Avg、Max、Min等常用聚合函数。
 * 支持分布式事务
 
