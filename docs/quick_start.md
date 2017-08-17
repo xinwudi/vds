@@ -4,13 +4,11 @@
 	
 	* 使用命令行连接
 		
-		
 		`mysql -h {ip} -P {port} -u {user} -p -A --prompt='vds>'`
-	* 通过jdbc连接
+		
+    * 通过jdbc连接
 		
 		`jdbc:mysql://{ip}:{port}`
-		
-
 		
 		初始用户信息：vds/tydic
 
@@ -49,6 +47,7 @@
 	* 示例：
 	
 	``` sql
+	--创建Schema
 	CREATE SCHEMA S1;
     USE S1;
 	-- 以a作为分库键，通过hash规则进行分库
@@ -62,39 +61,4 @@
   		'T1@B2'
 	);
 	``` 
-        
-* 第四步：创建Index(可选)
-
-    * 说明：
-        
-        可以手动建立的Index (索引)根据分库表和全局表的不同，可以分为映射索引和异构索引。
-        
-    * 示例：
-    
-    ``` sql
-    --在建立映射索引前创建映射索引的存储表（例如MAPPING_INDEX_TABLE分库键M），必须是分库表，并手动添加数据，表结构没有要求。
-    --此处为映射索引的创建实例
-    CREATE INDEX IF NOT EXISTS MAPPING_INDEX_NAME 
-        ON T1(A) 
-        TO MAPPING_INDEX_TABLE(M);
-  
-    ```
-* 其他：创建squence。
-
-    * 说明：
-    
-        VDS可以创建映射序列，映射序列是建立在VDS上的逻辑序列，Backend上以表的方式存储，也可以用默认序列的方式创建。
-    
-    * 示例：
-   
-    ``` sql
-    --映射序列
-    CREATE MAPPING  SEQUENCE  IF NOT EXISTS MAPPING_SEQUENCE ON 'vds'
-        START WITH 1
-        INCREMENT BY 10
-        MINVALUE 2
-        MAXVALUE 10000
-        CYCLE
-        CACHE  10;
-    ```
-        
+            
