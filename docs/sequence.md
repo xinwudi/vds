@@ -1,5 +1,5 @@
-###SEQUENCE序列
-####MAPPINGSEQUENCE映射序列
+## SEQUENCE序列
+### MAPPINGSEQUENCE映射序列
 * 语法
 
   ```sql
@@ -32,7 +32,7 @@
   --设置缓存10个序列
         CACHE  10;
   ```
-####DEFAULTSEQUENCE默认序列
+### DEFAULTSEQUENCE默认序列
 
 * 语法
   ```sql
