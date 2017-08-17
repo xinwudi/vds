@@ -105,7 +105,7 @@
 ### 分表语法
 * 语法：
     ```sql
-    SEGMENTS [NUM](
+    SEGMENTS NUM(
               'TABLE_NAME[NUM_1-NUM_2]@BACKEND',[...]);
     ```
   
