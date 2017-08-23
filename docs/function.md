@@ -1,6 +1,6 @@
 # VDS 函数说明
 
-<table>
+<table width="95%" border="1" cellpadding="2" cellspacing="1" style="table-layout:fixed;">
    <tr>
       <td>MySQL函数</td>
       <td>MySQL语法</td>
