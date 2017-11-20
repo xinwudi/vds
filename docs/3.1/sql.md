@@ -26,6 +26,7 @@
 [create table](#create_table) | 建表
 [create mapping sequence](#create_mapping_sequence) | 创建映射序列
 [create mapping index](#create_mapping_index) | 创建映射索引
+[create mapping index](#create_isomerism_index) | 创建异构索引
 [drop table](#drop_table) | 删除表
 
 ## DML
@@ -632,6 +633,36 @@
          ON TABLEA(B)
          TO MAPPING_INDEX_TABLE(B) 
          WITH(B);
+	
+	```		
+
+<span id="drop_table" />
+
+### Create ISOMERISM index
+    
+* 语法描述
+ 
+ ```sql
+	CREATE ISOMERISM INDEX [IF NOT EXISTS] index_name ON table_name(column_define ...) [USING table_name] {
+            hash_sharding
+ 		    		| case_sharding
+		    		| range_sharding
+		    		| list_sharding};
+```
+
+* 语法说明
+
+ 	INDEX_NAME是建立的异构索引名。TABLE_NAME是需要建立异构索引的的分库表。COLUMN是建立异构索引的分库表的列名。USE TABLE_NAME是存储异构索引的分库表，最后可选择的是异构索引表带分库分表方式。
+       
+* 应用实例
+  
+  ```sql
+	
+    	CREATE ISOMERISM INDEX IF NOT EXISTS emp_job_index ON
+ 			EMP(JOB) USING EMP_JOB_INDEX_TABLE
+ 			SHARDING BY  HASH(JOB) SEGMENTS 100(
+ 			'VDS.EMP_JOB_INDEX_TABLE[00-49]@mysql3307',
+ 			'VDS.EMP_JOB_INDEX_TABLE[50-99]@mysql3308');
 	
 	```		
 
