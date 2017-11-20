@@ -7,7 +7,7 @@ VDS(Virtual DataSource) - 虚拟数据源，是一款面向关系型数据库的
 ### 文档索引
 * [3.0 版本](3.0/index.html)
 * [3.1 版本](3.1/index.html)
-* [联系我们](contact.html)
+* [联系我们](3.0/contact.html)
 
 ### 关键特性
 
