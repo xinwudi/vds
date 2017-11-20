@@ -1,18 +1,47 @@
 # VDS SQL语法
 
+SQL | 说明 
+---- | ---
+[explain](#explain)| 查看执行计划
+[explain analyze](#explain_analyze)| 查看执行计划（内容更加详细，可查看当前执行计划涉及到的物理数据库及对应的SQL）
+[show backends](#show_backends) | 显示系统内所有的后端物理数据源信息
+[show backend status](#show_backend_status) | 显示后端物理数据源的状态信息
+[show variables](#show_variables) | 显示系统变量的值
+[show warnings](#show_warnings) | 显示在当前会话中执行语句所产生的条件(错误、警告和注释)的信息
+[show full tables](#show_full_tables) | 显示指定数据库的表的信息
+[show full columns](#show_full_columns) | 显示系统的表的列的信息
+[show index](#show_index) | 显示系统的表的列的信息
+[show tables](#show_tables) | 显示指定数据库的表的信息
+[show table status](#show_table_status) | 显示系统表的状态信息
+[show create table](#show_create_table) | 显示建表语句信息
+[show columns](#show_columns) | 查看列的信息
+[show logic index](#show_logic_index) | 查看逻辑索引的信息
+[show session status](#show_session_status) | 查看当前会话的状态
+[show current transaction](#show_current_transaction) | 查看当前事务的状态
+[show segment](#show_segment) | 显示vds分段，每个分段对应现实存在的物理表
+[show help](#show_help) | 显示系统内所有的指令信息
+[show slow querys](#show_slow_querys) | 显示系统内的慢SQL语句
+[show druid monitor](#show_druid_monitor) | 显示druid的监控信息
+[create backend](#create_backend) | 创建后端数据源
+[create table](#create_table) | 建表
+[create mapping sequence](#create_mapping_sequence) | 创建映射序列
+[create mapping index](#create_mapping_index) | 创建映射索引
+[drop table](#drop_table) | 删除表
 
 ## DML
 
+<span id="explain"/>
 ### Explain
 
 * 语法描述
 * 语句说明
-
+<span id="explain_analyze"/>
 ### Explain Analyze
 
 ## DAL
 
 ### SHOW
+<span id="show_backends"/>
 
 * show backends
 
@@ -37,7 +66,7 @@
     2 rows in set (0.01 sec)
 
 	```
-
+<span id="show_backend_status"/>
 * show backend status
 
 	* 语法描述
@@ -61,6 +90,7 @@
     +-----------+---------------------------------+-------+-----------+-------------+------------+---------+---------+---------+
     2 rows in set (0.01 sec)
 	```
+	<span id="show_variables" />
 * show variables
 
 	* 语法描述
@@ -85,6 +115,7 @@
     +------------------------+----------+
     4 rows in set
 	```
+	<span id="show_warnings"/>
 * show warnings
 	* 语法描述
 	
@@ -100,7 +131,7 @@
 	vds>show warnings;
     Empty set (0.01 sec)
 	```
-	
+	<span id="show_full_tables" />
 * show full tables
 	* 语法描述
 	
@@ -129,6 +160,7 @@
     8 rows in set (0.01 sec)
 
 	```
+<span id="show_full_columns" />
 * show full columns
 	* 语法描述
 	
@@ -152,6 +184,7 @@
     3 rows in set (0.01 sec)
 
 	```
+<span id="show_index" />
 * show index
 	* 语法描述
 	
@@ -179,6 +212,7 @@
     +-------+-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+---------+------------+
     6 rows in set (0.01 sec)
 	```
+<span id="show_tables" />
 * show tables
 	* 语法描述
 	
@@ -209,6 +243,7 @@
     8 rows in set (0.01 sec)
 
 	```
+<span id="show_table_status" />
 * show table status
 	* 语法描述
 	
@@ -236,6 +271,7 @@
     +--------------+--------------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+-------------+-------------+------------+-----------------+----------+----------------+----------------------+
     8 rows in set (0.01 sec)
 	```
+<span id="show_create_table" />
 * show create table
 	* 语法描述
 	
@@ -257,6 +293,7 @@
     1 row in set (0.00 sec)
 	
 	```
+<span id="show_columns" />
 * show columns
 	* 语法描述
 	
@@ -280,6 +317,7 @@
     +--------+-------------+------+------+---------+------------------+
     3 rows in set (0.01 sec)
 	```
+<span id="show_logic_index" />
 * show logic index
  
 	* 语法描述
@@ -303,6 +341,7 @@
     +-------+-------+----------+---------------+
     2 rows in set (0.01 sec)
 	```
+<span id="show_session_status" />
 * show session status
 	* 语法描述
 	
@@ -324,6 +363,7 @@
     +---------------------+------+---------------+----------------+
     1 row in set (0.01 sec)
 	```
+<span id="show_current_transaction" />
 * show current transaction
 	* 语法描述
 	
@@ -345,6 +385,7 @@
     |jdbc:mysql://vds.tydic.com:3308/VDS| PooledConnection | 20170720 16154 |
     +-----------------------------------+------------------+----------------+
 	```
+<span id="show_segment" />
 * show segment
 	* 语法描述
 	
@@ -366,6 +407,7 @@
     +-------+-------+---------------------------------+---------------+----------------+
     2 rows in set (0.15 sec)
 	```
+<span id="show_help" />
 * show help
 	* 语法描述
 	
@@ -392,6 +434,7 @@
     | show session status      | Report session status      |
     +--------------------------+----------------------------+
 	```
+<span id="show_slow_querys" />
 * show slow querys
 	* 语法描述
 	
@@ -414,6 +457,7 @@
      +---------------------------------------------+-------------+                             
      3 rows in set (0.00 sec)
 	```
+<span id="show_druid_monitor" />
 * show druid monitor
 	* 语法描述
 	
@@ -441,6 +485,7 @@
 
 ## DDL
 
+<span id="create_backend" />
 ### Create Backend
 
 * 语法描述
@@ -474,6 +519,7 @@
 	);
 	```
 
+<span id="create_table"/>
 ### Create Table 
 
 * 语法描述
@@ -529,6 +575,7 @@
 * 应用实例
 
 
+<span id="create_mapping_sequence" />
 ### Create Mapping Sequence
 
 * 语法描述
@@ -560,24 +607,24 @@
      CYCLE
      CACHE  10;
 	```
+<span id="create_mapping_index" />
+
 ### Create Mapping index
     
- * 语法描述
+* 语法描述
  
  ```sql
 	CREATE MAPPING INDEX [IF NOT EXISTS] INDEX_NAME 
         ON TABLE_NAME( INDEXCOLUMN_1[,...]) 
         {[USING sql]
         |[TO TABLE_NAME_INDEX(INDEXCOLUMN_2[,...])[WITH (expression[,...])]}
-	
-	
 ```
-    
- * 语法说明
+
+* 语法说明
 
  	TABLE_NAME是建立映射索引的分库表。TABLE_NAME_INDEX是存储映射索引的分库表。INDEXCOLUMN_1是建立映射索引的分库表的列名。INDEXCOLUMN_2是存储映射索引的分库表的列名（分库条件列）。
        
-  * 应用实例
+* 应用实例
   
   ```sql
 	
@@ -585,10 +632,13 @@
          ON TABLEA(B)
          TO MAPPING_INDEX_TABLE(B) 
          WITH(B);
-	 
-```		
+	
+	```		
+
+<span id="drop_table" />
 
 ### Drop Table 
+
 * 语法描述
 	
 	``` sql
