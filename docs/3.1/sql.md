@@ -1,7 +1,7 @@
 # VDS SQL语法
 
-SQL | 说明 
----- | ---
+|SQL | 说明 |
+| :---- | :--- |
 [explain](#explain)| 查看执行计划
 [explain analyze](#explain_analyze)| 查看执行计划（内容更加详细，可查看当前执行计划涉及到的物理数据库及对应的SQL）
 [show backends](#show_backends) | 显示系统内所有的后端物理数据源信息
