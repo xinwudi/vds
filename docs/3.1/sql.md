@@ -22,6 +22,10 @@
 [show help](#show_help) | 显示系统内所有的指令信息
 [show slow querys](#show_slow_querys) | 显示系统内的慢SQL语句
 [show druid monitor](#show_druid_monitor) | 显示druid的监控信息
+[show open tables where in_use>0](#show_open_table_where_in_use) | 显示锁表信息
+[show relation session](#show_relation_session) | 显示VDS与后端数据库的session对应关系
+[set log_query_time=expr](#log_query_time) | 设置慢查询的阀值,expr的单位为秒
+[set log_slow_queries=expr](#log_slow_queries) | 设置慢查询记录功能,expr为1（开启）或0（关闭），从关闭到开启状态会清空之前记录
 [create backend](#create_backend) | 创建后端数据源
 [create table](#create_table) | 建表
 [create mapping sequence](#create_mapping_sequence) | 创建映射序列
@@ -29,9 +33,12 @@
 [create_isomerism_index](#create_isomerism_index) | 创建异构索引
 [drop table](#drop_table) | 删除表
 
+
+
 ## DML
 
 <span id="explain"/>
+
 ### Explain
 
 * 语法描述
@@ -68,18 +75,19 @@
 
 	```
 <span id="show_backend_status"/>
+
 * show backend status
 
-	* 语法描述
+  * 语法描述
 	
 	```sql
 	SHOW BACKEND STATUS [FROM BKD_NAME]
 	```
-	* 语句说明
+  * 语句说明
 	
 		显示后端物理数据源的状态信息。
 		FROM BKD_NAME子句可以查看指定数据源的状态信息。
-	* 应用实例
+  * 应用实例
 	
 	```sql
 	vds>show backend status;
@@ -91,7 +99,9 @@
     +-----------+---------------------------------+-------+-----------+-------------+------------+---------+---------+---------+
     2 rows in set (0.01 sec)
 	```
-	<span id="show_variables" />
+	
+<span id="show_variables" />
+
 * show variables
 
 	* 语法描述
@@ -161,7 +171,7 @@
     8 rows in set (0.01 sec)
 
 	```
-<span id="show_full_columns" />
+  <span id="show_full_columns" />
 * show full columns
 	* 语法描述
 	
@@ -185,7 +195,7 @@
     3 rows in set (0.01 sec)
 
 	```
-<span id="show_index" />
+  <span id="show_index" />
 * show index
 	* 语法描述
 	
@@ -213,7 +223,7 @@
     +-------+-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+---------+------------+
     6 rows in set (0.01 sec)
 	```
-<span id="show_tables" />
+  <span id="show_tables" />
 * show tables
 	* 语法描述
 	
@@ -244,7 +254,7 @@
     8 rows in set (0.01 sec)
 
 	```
-<span id="show_table_status" />
+  <span id="show_table_status" />
 * show table status
 	* 语法描述
 	
@@ -272,7 +282,7 @@
     +--------------+--------------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+-------------+-------------+------------+-----------------+----------+----------------+----------------------+
     8 rows in set (0.01 sec)
 	```
-<span id="show_create_table" />
+  <span id="show_create_table" />
 * show create table
 	* 语法描述
 	
@@ -294,7 +304,7 @@
     1 row in set (0.00 sec)
 	
 	```
-<span id="show_columns" />
+  <span id="show_columns" />
 * show columns
 	* 语法描述
 	
@@ -318,7 +328,7 @@
     +--------+-------------+------+------+---------+------------------+
     3 rows in set (0.01 sec)
 	```
-<span id="show_logic_index" />
+  <span id="show_logic_index" />
 * show logic index
  
 	* 语法描述
@@ -342,7 +352,7 @@
     +-------+-------+----------+---------------+
     2 rows in set (0.01 sec)
 	```
-<span id="show_session_status" />
+  <span id="show_session_status" />
 * show session status
 	* 语法描述
 	
@@ -364,7 +374,7 @@
     +---------------------+------+---------------+----------------+
     1 row in set (0.01 sec)
 	```
-<span id="show_current_transaction" />
+  <span id="show_current_transaction" />
 * show current transaction
 	* 语法描述
 	
@@ -386,7 +396,7 @@
     |jdbc:mysql://vds.tydic.com:3308/VDS| PooledConnection | 20170720 16154 |
     +-----------------------------------+------------------+----------------+
 	```
-<span id="show_segment" />
+  <span id="show_segment" />
 * show segment
 	* 语法描述
 	
@@ -408,7 +418,7 @@
     +-------+-------+---------------------------------+---------------+----------------+
     2 rows in set (0.15 sec)
 	```
-<span id="show_help" />
+  <span id="show_help" />
 * show help
 	* 语法描述
 	
@@ -435,7 +445,7 @@
     | show session status      | Report session status      |
     +--------------------------+----------------------------+
 	```
-<span id="show_slow_querys" />
+  <span id="show_slow_querys" />
 * show slow querys
 	* 语法描述
 	
@@ -458,7 +468,7 @@
      +---------------------------------------------+-------------+                             
      3 rows in set (0.00 sec)
 	```
-<span id="show_druid_monitor" />
+  <span id="show_druid_monitor" />
 * show druid monitor
 	* 语法描述
 	
@@ -481,8 +491,89 @@
     +--------------+--------------------+-------------+---------------+----------------+-----------------------------+--------------+------------------+---------------+------------+---------------+--------------+--------------+--------------+
     2 rows in set (0.01 sec)	    
 	```
+  <span id="show_relation_session" />
+* show relation session
+	* 语法描述
+	
+	```sql
+	SHOW RELATION SESSION
+	```
+	* 语句说明
+	
+		显示VDS与后端数据库的session对应关系。
+	* 应用实例
+	
+	```sql
+	vds>show relation session;
+    +-------------+------------------+------------------+-------------------+--------------------------------------+
+    | VDS_SESSION | VDS_SESSION_USER | MYSQL_PROCESS_ID | MYSQL_USER        | MYSQL_URL                            |
+    +-------------+------------------+------------------+-------------------+--------------------------------------+
+    | 5           | VDS              | 12               | root@192.168.99.1 | jdbc:mysql://192.168.99.100:3307/vds |
+    | 5           | VDS              | 13               | root@192.168.99.1 | jdbc:mysql://192.168.99.100:3308/vds |
+    +-------------+------------------+------------------+-------------------+--------------------------------------+
+    2 rows in set (0.04 sec)
+	```
+  <span id="show_open_tables_where_in_use" />
+* show open tables where in_use>0
+	* 语法描述
+	
+	```sql
+	SHOW OPEN TABLES WHERE IN_USE>0
+	```
+	* 语句说明
+	
+		显示锁表信息。
+	* 应用实例
+	
+	```sql
+	vds>show open tables where in_use>0;
+    +--------+---------+-------------+-------------+-----------+-----------+------------+------------+------------+---------
+    --+----------+-----------+
+    | SCHEMA | BACKEND | LOCK_ID     | LOCK_TRX_ID | LOCK_MODE | LOCK_TYPE | LOCK_TABLE | LOCK_INDEX | LOCK_SPACE | LOCK_PAG
+    E | LOCK_REC | LOCK_DATA |
+    +--------+---------+-------------+-------------+-----------+-----------+------------+------------+------------+---------
+    --+----------+-----------+
+    | TEST   | B2      | 7945:59:3:2 | 7945        | X         | RECORD    | `vds`.`T1` | PRIMARY    | 59         | 3
+      | 2        | 1         |
+    | TEST   | B2      | 7944:59:3:2 | 7944        | X         | RECORD    | `vds`.`T1` | PRIMARY    | 59         | 3
+      | 2        | 1         |
+    +--------+---------+-------------+-------------+-----------+-----------+------------+------------+------------+---------
+    --+----------+-----------+
+    2 rows in set (0.08 sec)   
+	```
 
 ### SET
+<span id="log_query_time" />
+
+* set log_query_time=expr
+	* 语法描述
+	
+	```sql
+	SET LOG_QUERY_TIME=3;
+	```
+	* 语句说明
+	
+		设置慢查询的阀值,expr的单位为秒。
+	* 应用实例
+	
+	```sql
+	```
+<span id="log_slow_queries" />
+
+* set log_slow_queries=expr
+	* 语法描述
+	
+	```sql
+	SET LOG_SLOW_QUERIES=1;
+	SET LOG_SLOW_QUERIES=0;
+	```
+	* 语句说明
+	
+		设置慢查询记录功能,expr为1（开启）或0（关闭），从关闭到开启状态会清空之前记录。
+	* 应用实例
+	
+	```sql
+	```
 
 ## DDL
 
