@@ -22,7 +22,7 @@
 [show help](#show_help) | 显示系统内所有的指令信息
 [show slow querys](#show_slow_querys) | 显示系统内的慢SQL语句
 [show druid monitor](#show_druid_monitor) | 显示druid的监控信息
-[show open tables where in_use>0](#show_open_table_where_in_use) | 显示锁表信息
+[show open tables where in_use>0](#show_open_tables_where_in_use) | 显示锁表信息
 [show relation session](#show_relation_session) | 显示VDS与后端数据库的session对应关系
 [set log_query_time=expr](#log_query_time) | 设置慢查询的阀值,expr的单位为秒
 [set log_slow_queries=expr](#log_slow_queries) | 设置慢查询记录功能,expr为1（开启）或0（关闭），从关闭到开启状态会清空之前记录
