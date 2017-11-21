@@ -26,7 +26,7 @@
 [create table](#create_table) | 建表
 [create mapping sequence](#create_mapping_sequence) | 创建映射序列
 [create mapping index](#create_mapping_index) | 创建映射索引
-[create mapping index](#create_isomerism_index) | 创建异构索引
+[create_isomerism_index](#create_isomerism_index) | 创建异构索引
 [drop table](#drop_table) | 删除表
 
 ## DML
@@ -638,7 +638,7 @@
 
 <span id="drop_table" />
 
-### Create ISOMERISM index
+### Create Isomerism index
     
 * 语法描述
  
