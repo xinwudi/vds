@@ -4,7 +4,7 @@
 
   ```sql
   CREATE MAPPING SEQUENCE [ IF NOT EXISTS ] newSequenceName 
-        [ ON  PHYSICAL_DATABASE_NAME ]
+        [ON  databaseName[@[backendName | (backendName, ...)]]]
         [ START WITH long ]
         [ INCREMENT BY long ]
         [ MINVALUE long | NOMINVALUE | NO MINVALUE ] 
@@ -14,11 +14,13 @@
   ```  
 * 说明
 
-  映射序列是逻辑序列，在后端物理库以表的方式存储，在VDS中对其数据处理和操作，实现序列的功能。
+  映射序列是逻辑序列，在后端物理库以表的方式存储，在VDS中对其数据处理和操作，实现序列的功能。</p>
+	其中`databaseName`指定在后端物理库中使用哪个`database`来创建物理表，实现序列功能。</p>
   具体的语句意义与其他sql语言大致相同。在下方示例中会标注。
 * 示例
+* 
   ```sql
-  CREATE MAPPING  SEQUENCE  IF NOT EXISTS seq1 ON 'vds'
+  CREATE MAPPING  SEQUENCE  IF NOT EXISTS seq1 ON vds
   --序列从5开始
         START WITH 5
   --序列每次增加1
@@ -32,6 +34,39 @@
   --设置缓存10个序列
         CACHE  10;
   ```
+  
+    ```sql
+  CREATE MAPPING  SEQUENCE  IF NOT EXISTS seq1 ON vds@backend1
+  --序列从5开始
+        START WITH 5
+  --序列每次增加1
+        INCREMENT BY 1
+  --序列值最小为2
+        MINVALUE 2
+  --序列最大值为10
+        MAXVALUE 10
+  --开启序列循环
+        CYCLE
+  --设置缓存10个序列
+        CACHE  10;
+  ```
+  
+      ```sql
+  CREATE MAPPING  SEQUENCE  IF NOT EXISTS seq1 ON vds@(backend1,backend2)
+  --序列从5开始
+        START WITH 5
+  --序列每次增加1
+        INCREMENT BY 1
+  --序列值最小为2
+        MINVALUE 2
+  --序列最大值为10
+        MAXVALUE 10
+  --开启序列循环
+        CYCLE
+  --设置缓存10个序列
+        CACHE  10;
+  ```
+  
 ### DEFAULTSEQUENCE默认序列
 
 * 语法
