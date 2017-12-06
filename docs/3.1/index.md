@@ -14,6 +14,7 @@ VDS(Virtual DataSource) - 虚拟数据源，是一款面向关系型数据库的
 * [异构索引](Isomerism_index.html)
 * [映射索引](mapping_index.html)
 * [创建序列](sequence.html)
+* [监控功能](monitor.html)
 * [性能测试](performance.html)
 * [常见问题](faq.html)
 * [联系我们](contact.html)
