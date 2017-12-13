@@ -60,8 +60,8 @@
    答：默认情况下，VDS的自动提交是关闭的。 可以用命令开启自动提交,语句为`SET AUTOCOMMIT=1;`。 当
     使用jdbc连接VDS时，mysql的驱动会自动发送`set autocommit=1`。
  
+	<span id="9"/> 
 	
-	<span id="9"/>   
 9. 在VDS上建表的同时是否可以建立索引？
 
 	答：VDS的建表语句只包含基本的表结构（列+主键）， 索引在VDS是未处理的； 所以在VDS上建表时，不要同时创建索引；普通索引可通过@backendName 直接向后端数据库发送alter table指令 或 create index 指令。 
