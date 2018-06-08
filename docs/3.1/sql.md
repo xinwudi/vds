@@ -24,7 +24,7 @@
 [show druid monitor](#show_druid_monitor) | 显示druid的监控信息
 [show open tables where in_use>0](#show_open_tables_where_in_use) | 显示锁表信息
 [show relation session](#show_relation_session) | 显示VDS与后端数据库的session对应关系
-[set log_query_time=expr](#log_query_time) | 设置慢查询的阀值,expr的单位为秒
+[set log_query_time=expr](#log_query_time) | 设置慢查询的阀值,expr的单位为ms
 [set log_slow_queries=expr](#log_slow_queries) | 设置慢查询记录功能,expr为1（开启）或0（关闭），从关闭到开启状态会清空之前记录
 [create backend](#create_backend) | 创建后端数据源
 [create table](#create_table) | 建表
@@ -553,7 +553,7 @@
 	```
 	* 语句说明
 	
-		设置慢查询的阀值,expr的单位为秒。
+		设置慢查询的阀值,expr的单位为ms。
 	* 应用实例
 	
 	```sql
