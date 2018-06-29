@@ -1,0 +1,23 @@
+{
+  "title" : "VDS 使用说明",
+  "description": "关于VDS的使用说明文件",
+  "plugins": [
+     "splitter",
+     "codeblock-filename",
+     "editlink",
+     "anchors",
+     "anchor-navigation-ex",
+     "theme-comscore"
+  ],
+  "pluginsConfig":{
+    "editlink": {
+      "base": "https://github.com/bj-tydic/vds/edit/master/docs/",
+      "label": "修订"
+    }
+  },
+     "links" : {
+        "sidebar" : {
+            "On GitHub" : "https://bj-tydic.github.io/vds/"
+        }
+    }
+}

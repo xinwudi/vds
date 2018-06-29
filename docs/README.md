@@ -1,27 +1,9 @@
-### 什么是VDS?
+### VDS简介
 	
 	
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 VDS(Virtual DataSource) - 虚拟数据源，是一款面向关系型数据库的***分库分表***中间件。 兼容Mysql通信协议，支持`Mysql官方驱动`、`Mysql命令行`、`DbVisualizer`、`Navicat`等工具。采用JDBC驱动连接物理数据源，支持`Oracle`、`Mysql`、`DB2`等作为后端物理数据源接入。
 
-### 文档索引
-* [安装说明](3.2/setup.html)
-* [配置说明](3.2/config.html)
-* [快速入门](3.2/quick_start.html)
-* [SQL语法](3.2/sql.html)
-* [函数说明](3.2/function.html) 
-* [分库分表](3.2/sharding.html)
-* [异构索引](3.2/Isomerism_index.html)
-* [映射索引](3.2/mapping_index.html)
-* [创建序列](3.2/sequence.html)
-* [监控功能](3.2/monitor.html)
-* [多租户说明](3.2/tenant.html)
-* [IP黑白名单](3.2/ip_filter.html)
-* [SQL拦截器](3.2/sql_fireWall.html)
-* [自动扩容及数据备份](3.2/mysqlDump.html)
-* [性能测试](3.2/performance.html)
-* [常见问题](3.2/faq.html)
-* [联系我们](3.2/contact.html)
 
 ### 关键特性
 
