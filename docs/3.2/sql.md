@@ -2,36 +2,36 @@
 
 |SQL | 说明 |
 | :---- | :--- |
-[explain](#explain)| 查看执行计划
-[explain analyze](#explain_analyze)| 查看执行计划（内容更加详细，可查看当前执行计划涉及到的物理数据库及对应的SQL）
-[show backends](#show_backends) | 显示系统内所有的后端物理数据源信息
-[show backend status](#show_backend_status) | 显示后端物理数据源的状态信息
-[show variables](#show_variables) | 显示系统变量的值
-[show warnings](#show_warnings) | 显示在当前会话中执行语句所产生的条件(错误、警告和注释)的信息
-[show full tables](#show_full_tables) | 显示指定数据库的表的信息
-[show full columns](#show_full_columns) | 显示系统的表的列的信息
-[show index](#show_index) | 显示系统的表的列的信息
-[show tables](#show_tables) | 显示指定数据库的表的信息
-[show table status](#show_table_status) | 显示系统表的状态信息
-[show create table](#show_create_table) | 显示建表语句信息
-[show columns](#show_columns) | 查看列的信息
-[show logic index](#show_logic_index) | 查看逻辑索引的信息
-[show session status](#show_session_status) | 查看当前会话的状态
-[show current transaction](#show_current_transaction) | 查看当前事务的状态
-[show segment](#show_segment) | 显示vds分段，每个分段对应现实存在的物理表
-[show help](#show_help) | 显示系统内所有的指令信息
-[show slow querys](#show_slow_querys) | 显示系统内的慢SQL语句
-[show druid monitor](#show_druid_monitor) | 显示druid的监控信息
-[show open tables where in_use>0](#show_open_tables_where_in_use) | 显示锁表信息
-[show relation session](#show_relation_session) | 显示VDS与后端数据库的session对应关系
-[set log_query_time=expr](#log_query_time) | 设置慢查询的阀值,expr的单位为ms
-[set log_slow_queries=expr](#log_slow_queries) | 设置慢查询记录功能,expr为1（开启）或0（关闭），从关闭到开启状态会清空之前记录
-[create backend](#create_backend) | 创建后端数据源
-[create table](#create_table) | 建表
-[create mapping sequence](#create_mapping_sequence) | 创建映射序列
-[create mapping index](#create_mapping_index) | 创建映射索引
-[create_isomerism_index](#create_isomerism_index) | 创建异构索引
-[drop table](#drop_table) | 删除表
+|[explain](#explain)| 查看执行计划|
+|[explain analyze](#explain_analyze)| 查看执行计划（内容更加详细，可查看当前执行计划涉及到的物理数据库及对应的SQL）|
+|[show backends](#show_backends) | 显示系统内所有的后端物理数据源信息|
+|[show backend status](#show_backend_status) | 显示后端物理数据源的状态信息|
+|[show variables](#show_variables) | 显示系统变量的值|
+|[show warnings](#show_warnings) | 显示在当前会话中执行语句所产生的条件(错误、警告和注释)的信息|
+|[show full tables](#show_full_tables) | 显示指定数据库的表的信息|
+|[show full columns](#show_full_columns) | 显示系统的表的列的信息|
+|[show index](#show_index) | 显示系统的表的列的信息|
+|[show tables](#show_tables) | 显示指定数据库的表的信息|
+|[show table status](#show_table_status) | 显示系统表的状态信息|
+|[show create table](#show_create_table) | 显示建表语句信息|
+|[show columns](#show_columns) | 查看列的信息|
+|[show logic index](#show_logic_index) | 查看逻辑索引的信息|
+|[show session status](#show_session_status) | 查看当前会话的状态|
+|[show current transaction](#show_current_transaction) | 查看当前事务的状态|
+|[show segment](#show_segment) | 显示vds分段，每个分段对应现实存在的物理表|
+|[show help](#show_help) | 显示系统内所有的指令信息|
+|[show slow querys](#show_slow_querys) | 显示系统内的慢SQL语句|
+|[show druid monitor](#show_druid_monitor) | 显示druid的监控信息|
+|[show open tables where in_use>0](#show_open_tables_where_in_use) | 显示锁表信息|
+|[show relation session](#show_relation_session) | 显示VDS与后端数据库的session对应关系|
+|[set log_query_time=expr](#log_query_time) | 设置慢查询的阀值,expr的单位为ms|
+|[set log_slow_queries=expr](#log_slow_queries) | 设置慢查询记录功能,expr为1（开启）或0（关闭），从关闭到开启状态会清空之前记录|
+|[create backend](#create_backend) | 创建后端数据源|
+|[create table](#create_table) | 建表|
+|[create mapping sequence](#create_mapping_sequence) | 创建映射序列|
+|[create mapping index](#create_mapping_index) | 创建映射索引|
+|[create_isomerism_index](#create_isomerism_index) | 创建异构索引|
+|[drop table](#drop_table) | 删除表|
 
 
 

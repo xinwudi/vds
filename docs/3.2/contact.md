@@ -3,7 +3,7 @@
 ### 邮箱 
 	
 	
-`vds@tydic.bj.cn`
+`shihl@tydic.bj.cn`
 
 
 ### QQ群
