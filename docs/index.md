@@ -7,6 +7,7 @@ VDS(Virtual DataSource) - 虚拟数据源，是一款面向关系型数据库的
 ### 文档索引
 * [3.0 版本](3.0/index.html)
 * [3.1 版本](3.1/index.html)
+* [3.2 版本](3.2/index.html)
 * [联系我们](3.0/contact.html)
 
 ### 更新记录
@@ -35,4 +36,10 @@ VDS(Virtual DataSource) - 虚拟数据源，是一款面向关系型数据库的
 		* 增加若干函数的支持。
 		
 	* BUG修复
-		* 解决twitter id 生成器, 每毫秒内从奇数开始的BUG		* 默认序列不再自动调整为映射序列，解决backend中出现nullvds_sequence表的问题		* 解决了嵌套查询类型转换异常的问题		* 解决DDL数据修改事务未提交的问题		* 解决double、float的精度显示问题		* 解决因SQL异常断开连接的BUG		* 解决部分函数触发NullException的问题.
+		* 解决twitter id 生成器, 每毫秒内从奇数开始的BUG
+		* 默认序列不再自动调整为映射序列，解决backend中出现nullvds_sequence表的问题
+		* 解决了嵌套查询类型转换异常的问题
+		* 解决DDL数据修改事务未提交的问题
+		* 解决double、float的精度显示问题
+		* 解决因SQL异常断开连接的BUG
+		* 解决部分函数触发NullException的问题.
