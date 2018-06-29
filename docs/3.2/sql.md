@@ -1,6 +1,6 @@
 # VDS SQL语法
 
-|SQL | 说明 |
+<!--|SQL | 说明 |
 | :---- | :--- |
 |[explain](#explain)| 查看执行计划|
 |[explain analyze](#explain_analyze)| 查看执行计划（内容更加详细，可查看当前执行计划涉及到的物理数据库及对应的SQL）|
@@ -31,7 +31,7 @@
 |[create mapping sequence](#create_mapping_sequence) | 创建映射序列|
 |[create mapping index](#create_mapping_index) | 创建映射索引|
 |[create_isomerism_index](#create_isomerism_index) | 创建异构索引|
-|[drop table](#drop_table) | 删除表|
+|[drop table](#drop_table) | 删除表|-->
 
 
 
@@ -44,24 +44,24 @@
 * 语法描述
 * 语句说明
 <span id="explain_analyze"/>
+
 ### Explain Analyze
 
 ## DAL
 
-### SHOW
 <span id="show_backends"/>
 
-* show backends
+### show backends
 
-	* 语法描述
+* 语法描述
 	
 	```sql
 	SHOW BACKENDS
 	```
-	* 语句说明
+* 语句说明
 	
-		显示系统内所有的后端物理数据源信息。
-	* 应用实例
+	显示系统内所有的后端物理数据源信息。
+* 应用实例
 	
 	```sql
 	vds>show backends;
@@ -76,18 +76,18 @@
 	```
 <span id="show_backend_status"/>
 
-* show backend status
+### show backend status
 
-  * 语法描述
+* 语法描述
 	
 	```sql
 	SHOW BACKEND STATUS [FROM BKD_NAME]
 	```
-  * 语句说明
+* 语句说明
 	
-		显示后端物理数据源的状态信息。
+	显示后端物理数据源的状态信息。
 		FROM BKD_NAME子句可以查看指定数据源的状态信息。
-  * 应用实例
+* 应用实例
 	
 	```sql
 	vds>show backend status;
@@ -102,17 +102,17 @@
 	
 <span id="show_variables" />
 
-* show variables
+### show variables
 
-	* 语法描述
+* 语法描述
 	
 	```sql
 	SHOW [GLOBAL] VARIABLES
 	```
-	* 语句说明
+* 语句说明
 	
-		显示系统变量的值。使用`[GLOBAL]`选项，显示全局系统变量值。
-	* 应用实例
+	显示系统变量的值。使用`[GLOBAL]`选项，显示全局系统变量值。
+* 应用实例
 	
 	```sql
 	vds> show variables;
@@ -127,32 +127,35 @@
     4 rows in set
 	```
 	<span id="show_warnings"/>
-* show warnings
-	* 语法描述
+	
+### show warnings
+* 语法描述
 	
 	```sql
 	SHOW WARNINGS 
 	```
-	* 语句说明
+* 语句说明
 	
-		显示在当前会话中执行语句所产生的条件(错误、警告和注释)的信息。
-	* 应用实例
+	显示在当前会话中执行语句所产生的条件(错误、警告和注释)的信息。
+* 应用实例
 	
 	```sql
 	vds>show warnings;
     Empty set (0.01 sec)
 	```
 	<span id="show_full_tables" />
-* show full tables
-	* 语法描述
+	
+### show full tables
+	
+* 语法描述
 	
 	```sql
 	SHOW FULL TABLES FROM DB_NAME
 	```
-	* 语句说明
+* 语句说明
 	
-		显示指定数据库的表的信息。
-	* 应用实例
+	显示指定数据库的表的信息。
+* 应用实例
 	
 	```sql
 	vds> show full tables from scott;
@@ -172,16 +175,17 @@
 
 	```
   <span id="show_full_columns" />
-* show full columns
-	* 语法描述
+  
+### show full columns
+* 语法描述
 	
 	```sql
 	SHOW FULL COLUMNS FROM TBL_NAME [FROM DB_NAME]
 	```
-	* 语句说明
+* 语句说明
 	
-		显示系统的表的列的信息。
-	* 应用实例
+	显示系统的表的列的信息。
+* 应用实例
 	
 	```sql
 	vds> show full columns from dept from scott;
@@ -196,16 +200,18 @@
 
 	```
   <span id="show_index" />
-* show index
-	* 语法描述
+  
+### show index
+
+* 语法描述
 	
 	```sql
 	SHOW INDEX FROM TBL_NAME [FROM DB_NAME]
 	```
-	* 语句说明
+* 语句说明
 	
-		显示系统的索引信息。
-	* 应用实例
+	显示系统的索引信息。
+* 应用实例
 	
 	```sql
 	 vds> use scott;
@@ -224,16 +230,17 @@
     6 rows in set (0.01 sec)
 	```
   <span id="show_tables" />
-* show tables
-	* 语法描述
+  
+### show tables
+* 语法描述
 	
 	```sql
 	SHOW TABLES [FROM DB_NAME]
 	```
-	* 语句说明
+* 语句说明
 	
-		显示指定数据库的表的信息。
-	* 应用实例
+	显示指定数据库的表的信息。
+* 应用实例
 	
 	```sql
 	 vds>use scott;	
@@ -255,16 +262,18 @@
 
 	```
   <span id="show_table_status" />
-* show table status
-	* 语法描述
+  
+### show table status
+	
+* 语法描述
 	
 	```sql
 	SHOW TABLE STATUS FROM DB_NAME
 	```
-	* 语句说明
+* 语句说明
 	
-		显示系统表的状态信息。
-	* 应用实例
+	显示系统表的状态信息。
+* 应用实例
 	
 	```sql
 	vds> show table status from scott;
@@ -283,16 +292,18 @@
     8 rows in set (0.01 sec)
 	```
   <span id="show_create_table" />
-* show create table
-	* 语法描述
+  
+### show create table
+	
+* 语法描述
 	
 	```sql
 	SHOW CREATE TABLE TBL_NAME
 	```
-	* 语句说明
+* 语句说明
 	
-		显示建表语句信息。
-	* 应用实例
+	显示建表语句信息。
+* 应用实例
 	
 	```sql
 	vds>  show create table dept;
@@ -305,17 +316,19 @@
 	
 	```
   <span id="show_columns" />
-* show columns
-	* 语法描述
+  
+### show columns
+
+* 语法描述
 	
 	```sql
 	SHOW COLUMNS FROM TBL_NAME [FROM DB_NAME]
 	```
 	
-	* 语句说明
+* 语句说明
 	
-		查看列的信息。
-	* 应用实例
+	查看列的信息。
+* 应用实例
 	
 	```sql
 	vds> show columns from scott.dept;
@@ -329,18 +342,19 @@
     3 rows in set (0.01 sec)
 	```
   <span id="show_logic_index" />
-* show logic index
+  
+### show logic index
  
-	* 语法描述
+* 语法描述
 	
 	```sql
 	SHOW LOGIC INDEX FROM TBL_NAME [FROM DB_NAME]
 	```
 	
-	* 语句说明
+* 语句说明
 	
-		查看逻辑索引的信息。
-	* 应用实例
+	查看逻辑索引的信息。
+* 应用实例
 	
 	```sql
 	vds>show logic index from scott.dept;
@@ -353,17 +367,19 @@
     2 rows in set (0.01 sec)
 	```
   <span id="show_session_status" />
-* show session status
-	* 语法描述
+  
+### show session status
+	
+* 语法描述
 	
 	```sql
 	SHOW SESSION STATUS
 	```
 	
-	* 语句说明
+* 语句说明
 	
-		查看当前会话的状态。
-	* 应用实例
+	查看当前会话的状态。
+* 应用实例
 	
 	```sql
 	vds>show session status;
@@ -375,16 +391,17 @@
     1 row in set (0.01 sec)
 	```
   <span id="show_current_transaction" />
-* show current transaction
-	* 语法描述
+  
+### show current transaction
+* 语法描述
 	
 	```sql
 	SHOW CURRENT TRANSACTION
 	```
-	* 语句说明
+* 语句说明
 	
-		查看当前事务的状态。
-	* 应用实例
+	查看当前事务的状态。
+* 应用实例
 	
 	```sql
 	vds>show current transaction;
@@ -397,16 +414,17 @@
     +-----------------------------------+------------------+----------------+
 	```
   <span id="show_segment" />
-* show segment
-	* 语法描述
+  
+### show segment
+* 语法描述
 	
 	```sql
 	SHOW SEGMENT FROM tbl_name
 	```
-	* 语句说明
+* 语句说明
 	
-		显示vds分段，每个分段对应现实存在的物理表。
-	* 应用实例
+	显示vds分段，每个分段对应现实存在的物理表。
+* 应用实例
 	
 	```sql
 	vds>show segment from scott.dept;
@@ -419,16 +437,18 @@
     2 rows in set (0.15 sec)
 	```
   <span id="show_help" />
-* show help
-	* 语法描述
+  
+### show help
+
+* 语法描述
 	
 	```sql
 	SHOW HELP
 	```
-	* 语句说明
+* 语句说明
 	
 		显示系统内所有的指令信息。
-	* 应用实例
+* 应用实例
 	
 	```sql
 	vds>show help;
@@ -446,16 +466,18 @@
     +--------------------------+----------------------------+
 	```
   <span id="show_slow_querys" />
-* show slow querys
-	* 语法描述
+  
+### show slow querys
+	
+* 语法描述
 	
 	```sql
 	SHOW SLOW QUERYS [LIMIT row_count]
 	```
-	* 语句说明
+* 语句说明
 	
-		显示系统内的慢SQL语句，只记录最近的一千条慢SQL语句。`[LIMIT]`子句可以设置显示的记录数。
-	* 应用实例
+	显示系统内的慢SQL语句，只记录最近的一千条慢SQL语句。`[LIMIT]`子句可以设置显示的记录数。
+* 应用实例
 	
 	```sql
 	vds> show slow querys limit 3;
@@ -468,40 +490,19 @@
      +---------------------------------------------+-------------+                             
      3 rows in set (0.00 sec)
 	```
-  <span id="show_druid_monitor" />
-* show druid monitor
-	* 语法描述
 	
-	```sql
-	SHOW DRUID MONITOR
-	```
-	* 语句说明
-	
-		显示druid的监控信息。
-	* 应用实例
-	
-	```sql
-	vds> show druid monitor;
-    +-----------------------------------+-------------+---------------+----------------+-----------------------------+--------------+------------------+----------------------------+---------------+--------------+--------------+--------------+
-    |URL                                |TYPE         |POOLING_COUNT  |POOLING_PEAK    |POOLING_PEAKTIME             |ACTIVE_COUNT  |ACTIVE_PEAK       |ACTIVE_PEAKTIME             |CONNECT_COUNT  |COMMIT_COUNT  |ERROR_COUNT   |EXECUTE_COUNT |
-    +-----------------------------------+-------------+---------------+----------------+-----------------------------+--------------+------------------+----------------------------+---------------+--------------+--------------+--------------+
-    |jdbc:mysql://vds.tydic.com:3307/VDS|    mysql    |       1       |        1       | Mon Jul 24 14:45:23 CST 2017|       0      |        1         |Mon Jul 24 14:45:23 CST 2017|      9        |       1      |       0      |       7      |
-    +-----------------------------------+-------------+---------------+----------------+-----------------------------+--------------+------------------+----------------------------+---------------+--------------+--------------+--------------+
-    |jdbc:mysql://vds.tydic.com:3308/VDS|    mysql    |       1       |        1       | Mon Jul 24 14:45:23 CST 2017|       0      |        1         |Mon Jul 24 14:45:23 CST 2017|      9        |       0      |       0      |       7      |
-    +--------------+--------------------+-------------+---------------+----------------+-----------------------------+--------------+------------------+---------------+------------+---------------+--------------+--------------+--------------+
-    2 rows in set (0.01 sec)	    
-	```
   <span id="show_relation_session" />
-* show relation session
-	* 语法描述
+  
+### show relation session
+* 语法描述
 	
 	```sql
 	SHOW RELATION SESSION
 	```
-	* 语句说明
+* 语句说明
 	
-		显示VDS与后端数据库的session对应关系。
-	* 应用实例
+	显示VDS与后端数据库的session对应关系。
+* 应用实例
 	
 	```sql
 	vds>show relation session;
@@ -514,16 +515,18 @@
     2 rows in set (0.04 sec)
 	```
   <span id="show_open_tables_where_in_use" />
-* show open tables where in_use>0
-	* 语法描述
+  
+### show open tables where in_use>0
+	
+* 语法描述
 	
 	```sql
 	SHOW OPEN TABLES WHERE IN_USE>0
 	```
-	* 语句说明
+* 语句说明
 	
-		显示锁表信息。
-	* 应用实例
+	显示锁表信息。
+* 应用实例
 	
 	```sql
 	vds>show open tables where in_use>0;
@@ -540,39 +543,6 @@
     +--------+---------+-------------+-------------+-----------+-----------+------------+------------+------------+---------
     --+----------+-----------+
     2 rows in set (0.08 sec)   
-	```
-
-### SET
-<span id="log_query_time" />
-
-* set log_query_time=expr
-	* 语法描述
-	
-	```sql
-	SET LOG_QUERY_TIME=3;
-	```
-	* 语句说明
-	
-		设置慢查询的阀值,expr的单位为ms。
-	* 应用实例
-	
-	```sql
-	```
-<span id="log_slow_queries" />
-
-* set log_slow_queries=expr
-	* 语法描述
-	
-	```sql
-	SET LOG_SLOW_QUERIES=1;
-	SET LOG_SLOW_QUERIES=0;
-	```
-	* 语句说明
-	
-		设置慢查询记录功能,expr为1（开启）或0（关闭），从关闭到开启状态会清空之前记录。
-	* 应用实例
-	
-	```sql
 	```
 
 ## DDL
