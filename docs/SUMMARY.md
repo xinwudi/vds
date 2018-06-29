@@ -14,7 +14,7 @@
 * [多租户说明](3.2/tenant.md)
 * [IP黑白名单](3.2/ip_filter.md)
 * [SQL拦截器](3.2/sql_fireWall.md)
-* [自动扩容及数据备份](3.2/mysqlDump.md)
+* [备份及扩容](3.2/mysqlDump.md)
 * [性能测试](3.2/performance.md)
 * [常见问题](3.2/faq.md)
 * [联系我们](3.2/contact.md)
