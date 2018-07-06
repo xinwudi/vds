@@ -16,5 +16,6 @@
 * [SQL拦截器](3.2/sql_fireWall.md)
 * [备份及扩容](3.2/mysqlDump.md)
 * [性能测试](3.2/performance.md)
+* [VDS-WEB使用](vds3.x-web-pages.md)
 * [常见问题](3.2/faq.md)
 * [联系我们](3.2/contact.md)
