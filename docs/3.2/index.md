@@ -18,8 +18,9 @@ VDS(Virtual DataSource) - 虚拟数据源，是一款面向关系型数据库的
 * [多租户说明](tenant.html)
 * [IP黑白名单](ip_filter.html)
 * [SQL拦截器](sql_fireWall.html)
-* [自动扩容及数据备份](mysqlDump.html)
+* [扩容及备份](mysqlDump.html)
 * [性能测试](performance.html)
+* [VDS-WEB使用](vds3.x-web-pages.html)
 * [常见问题](faq.html)
 * [联系我们](contact.html)
 
