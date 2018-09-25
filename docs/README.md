@@ -41,3 +41,6 @@ VDS(Virtual DataSource) - 虚拟数据源，是一款面向关系型数据库的
 * 支持用户、权限管理
 	
 	支持`Create|Alter User`, 支持`Grant` 赋权操作。
+
+
+https://tydic.gitbook.io/vds/
